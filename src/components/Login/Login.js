@@ -6,12 +6,7 @@ import Navbar from '../Navbar/Navbar';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faSignInAlt, faLock } from '@fortawesome/free-solid-svg-icons';
-
 import { initializeLoginFramework, handleGoogleSignIn, handleSignOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './loginManager';
-
-
-
-
 
 const Login = () => {
     
@@ -25,7 +20,7 @@ const Login = () => {
 
   initializeLoginFramework();
 
-  const [loggedInUser, setLoggedInUser ] = useContext(UserContext);
+  const [ setLoggedInUser ] = useContext(UserContext);
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
@@ -90,27 +85,27 @@ const Login = () => {
         <div style={{textAlign: 'center'}}>
             <Navbar></Navbar>
       
-      <div className="style">
-      <h1><FontAwesomeIcon icon={faLock}/> Sign in</h1>
-      <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id=""/>
-      <label htmlFor="newUser">New User Sign up</label>
-      <form onSubmit={handleSubmit}>
-        {newUser && <input name="name" type="text" onBlur={handleBlur} placeholder="Your name"/>}
-        <br/>
-        <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
-        <br/>
-        <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
-        <br/><br/>
-        <input type="submit" className= 'btn btn-secondary'  value={newUser ?  'Sign up' :  'Sign in'}/> <br/>
-        <br/>
-        { user.isSignedIn ? <button onClick={signOut}>Sign Out</button> :
-        <button onClick={googleSignIn} className= 'btn btn-info'> <FontAwesomeIcon icon={faSignInAlt}/> Google Sign In</button>
-      }
-      </form>
-      <p style={{color: 'red'}}>{user.error}</p>
-      { user.success && <p style={{color: 'green'}}>User { newUser ? 'created' : 'Logged In'} successfully</p>}
-      </div>
-    </div>
+            <div className="style">
+                <h1><FontAwesomeIcon icon={faLock}/> Sign in</h1>
+                <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id=""/>
+                <label htmlFor="newUser">New User Sign up</label>
+                <form onSubmit={handleSubmit}>
+                {newUser && <input name="name" type="text" onBlur={handleBlur} placeholder="Your name"/>}
+                <br/>
+                <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
+                <br/>
+                <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+                <br/><br/>
+                <input type="submit" className= 'btn btn-secondary'  value={newUser ?  'Sign up' :  'Sign in'}/> <br/>
+                <br/>
+                { user.isSignedIn ? <button onClick={signOut}>Sign Out</button> :
+                <button onClick={googleSignIn} className= 'btn btn-info'> <FontAwesomeIcon icon={faSignInAlt}/> Google Sign In</button>
+            }
+                </form>
+                <p style={{color: 'red'}}>{user.error}</p>
+                { user.success && <p style={{color: 'green'}}>User { newUser ? 'created' : 'Logged In'} successfully</p>}
+            </div>
+        </div>
 
     );
 };
