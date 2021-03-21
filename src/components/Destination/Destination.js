@@ -40,35 +40,27 @@ const Destination = () => {
                     <label for="">Pick To</label>
                     <input className="inp-style" type="text" name="" placeholder="Dhanmondi" />
                 </div>
-                <div className="inputs">
-                    <div className="input-group">
-                        <label for="">Booking Date</label>
-                        <input className="inp-style" type="date" name="" />
-                    </div>
-                </div>
 
             </div>
 
         buttonText = <p>Confirm Your Ticket</p>
-
     }
    
    return (
 
-
-    <div>
+        <div>
             <Navbar></Navbar>
             <div className="container">
-            <div className="main-content container mt-5">
-                <div id="booking-area" className="booking-form col-md-6">
+            <div className="container mt-5 row">
+                <div id="booking-area" className="booking-form col-md-8">
                     <h3>Booking Rides</h3>
                     {display}
                     <button style={{ width: '180px', height: '37px' }} className="btn btn-secondary" onClick={() => setBookVehicle(!bookVehicle)}>{buttonText}</button>
                 </div>
-                <div style={{height: '500px'}} className="col-md-6">
+                <div style={{height: '400px'}} className="col-md-4">
                     <Map></Map>
                 </div>
-            </div>
+                </div>
             </div>
         </div>
     );

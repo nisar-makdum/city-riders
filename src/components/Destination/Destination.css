@@ -4,12 +4,6 @@
     margin: 0 auto;
   }
   
-  .main-content {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 70px;
-    align-items: center;
-  }
   .booking-form {
     background-color: #fff;
     border: 1px solid #ddd;
