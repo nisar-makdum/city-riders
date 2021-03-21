@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Map from '../Map/Map';
 
 
-
 const Destination = () => {
     const {transportType} = useParams();
     const rideType = fakedata.find(pd => pd.transportType === transportType);
@@ -20,12 +19,12 @@ const Destination = () => {
             <div>
 
                 <div >
-                    <img src={rideType && rideType.image} alt="" />
+                    <img className="img-fluid" src={rideType && rideType.image} alt="" />
                     <h2>Ride Type: {rideType && rideType.transportType}</h2>
                     <br/>
                     <h4>Passenger Number: {rideType && rideType.passengerNumber}</h4>
                     <h4>Total Cost: ${rideType && rideType.price}</h4>
-                </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
             </div>
         buttonText = <p>Back</p>
     }
