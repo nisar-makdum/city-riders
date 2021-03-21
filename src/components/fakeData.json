@@ -1,28 +1,28 @@
 [{
     "id":1,
     "transportType": "Bike",
-    "passengerNumber": 4,
+    "passengerNumber": 2,
     "image": "https://i.ibb.co/jfwxngC/Frame.png",
-    "price": 20
+    "price": 50
 },
 {
     "id":2,
     "transportType": "Car",
     "passengerNumber": 4,
     "image": "https://i.ibb.co/WGFm8rp/Frame-2.png",
-    "price": 30
+    "price": 80
 },
 {
     "id":3,
     "transportType": "Bus",
     "passengerNumber": 4,
     "image": "https://i.ibb.co/3yYVrc9/Frame-1.png",
-    "price": 40
+    "price": 70
 },
 {
     "id":4,
     "transportType": "Train",
     "passengerNumber": 4,
     "image": "https://i.ibb.co/zZSzkMV/Group.png",
-    "price": 50
+    "price": 100
 }]

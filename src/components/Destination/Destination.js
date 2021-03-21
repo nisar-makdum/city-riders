@@ -1,9 +1,10 @@
 import Navbar from '../Navbar/Navbar';
-import map from '../../images/Map.png';
 import './Destination.css';
 import fakedata from '../fakeData.json';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import Map from '../Map/Map';
+
 
 
 const Destination = () => {
@@ -58,15 +59,17 @@ const Destination = () => {
 
     <div>
             <Navbar></Navbar>
+            <div className="container">
             <div className="main-content container mt-5">
-                <div id="booking-area" className="booking-form">
+                <div id="booking-area" className="booking-form col-md-6">
                     <h3>Booking Rides</h3>
                     {display}
-                    <button style={{ width: '200px', height: '40px' }} className="btn btn-secondary" onClick={() => setBookVehicle(!bookVehicle)}>{buttonText}</button>
+                    <button style={{ width: '180px', height: '37px' }} className="btn btn-secondary" onClick={() => setBookVehicle(!bookVehicle)}>{buttonText}</button>
                 </div>
-                <div>
-                    <img style={{height:'600px', width:'700px'}} src={map} alt=""/>
+                <div style={{height: '500px'}} className="col-md-6">
+                    <Map></Map>
                 </div>
+            </div>
             </div>
         </div>
     );
